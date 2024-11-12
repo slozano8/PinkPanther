@@ -1,6 +1,7 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
+
+
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -22,6 +23,9 @@ export default function HomeScreen() {
   );
 }
 
+
+
+
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
@@ -29,8 +33,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+    gap: 5,
+    marginBottom: 5,
   },
   reactLogo: {
     width: '100%',
