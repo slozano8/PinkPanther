@@ -13,7 +13,7 @@ export default function App() {
   return (
     <NavigationContainer>
       {Platform.OS === "android" && (
-        <Drawer.Navigator screenOptions={{ headerShown: false }}>
+        <Drawer.Navigator>
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Latest Movies" component={MovieList} />
         </Drawer.Navigator>
