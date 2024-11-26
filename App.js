@@ -1,4 +1,5 @@
 import * as React from "react";
+import '@expo/metro-runtime';
 import { NavigationContainer } from "@react-navigation/native";
 // import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
