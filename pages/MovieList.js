@@ -15,9 +15,7 @@ export default function MovieList() {
         />
         <Text style={styles.h1}>Hello, from the movie screen!</Text>
       </View>
-      <ScrollView>
-        <APIList url="https://api.themoviedb.org/3/movie/popular?api_key=bc2fe3535276b345b0cc283587327106" />
-      </ScrollView>
+      <APIList url="https://api.themoviedb.org/3/movie/popular?api_key=bc2fe3535276b345b0cc283587327106" />
     </View>
   );
 }
