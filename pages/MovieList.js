@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView, StyleSheet, Image, Platform } from "react-native";
+import { View, Text, ScrollView, StyleSheet, Image, Platform, StatusBar } from "react-native";
 import APIList from "../components/api";
 
 const header_img = require("../assets/pinkPanther.png");

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Platform } from "react-native";
+import { View, Text, StyleSheet, Image, Platform, StatusBar } from "react-native";
 
 const header_img = require("../assets/pinkPanther.png");
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     ...Platform.select({
-        ios: { paddingTop: 20 },
+        ios: { paddingTop: 55 },
         android: { paddingTop: StatusBar.currentHeight },
       }),
   },
