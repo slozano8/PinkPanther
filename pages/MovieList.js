@@ -36,13 +36,6 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#FFF",
   },
-  bodyContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: "98%",
-    backgroundColor: "#F9F9F9",
-  },
   h1: {
     fontSize: 24,
     fontFamily: "sans-serif",

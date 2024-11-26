@@ -36,7 +36,7 @@ export default function APIList({ url }) {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   const dynamicStyles = () => {
     // Dynamic stylesheet
@@ -115,9 +115,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-  },
-  cardContent: {
-    marginTop: 10,
   },
   textTitle: {
     fontFamily: "Calibri",
