@@ -23,7 +23,8 @@ export default function APIList({ url }) {
     return () => subscription?.remove(); // clean up the listener
   }, []);
 
-  useEffect(() => { // Get data for list
+  useEffect(() => {
+    // Get data for list
     const fetchData = async () => {
       try {
         const response = await axios.get(url);
@@ -37,7 +38,8 @@ export default function APIList({ url }) {
     fetchData();
   }, []);
 
-  const dynamicStyles = () => { // Dynamic stylesheet
+  const dynamicStyles = () => {
+    // Dynamic stylesheet
     return {
       movieItem: {
         flexDirection: windowDimensions.width > 600 ? "row" : "column",
