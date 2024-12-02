@@ -47,38 +47,32 @@ export default function App() {
   return (
     <NavigationContainer>
       {connected === "Connected" ? (
-        Platform.OS === "ios" || Platform.OS === "android" ? (
-          <Tab.Navigator screenOptions={{ headerShown: false }}>
-            <Tab.Screen
-              name="Home"
-              component={Home}
-              options={{
-                tabBarIcon: ({ focused }) =>
-                  focused ? (
-                    <Image source={HomeIcon} style={styles.image} />
-                  ) : (
-                    <Image source={HomeIconOutline} style={styles.image} />
-                  ),
-              }}
-            />
-            <Tab.Screen
-              name="Latest Movies"
-              component={MovieList}
-              options={{
-                tabBarIcon: ({ focused }) =>
-                  focused ? (
-                    <Image source={FilmIcon} style={styles.image} />
-                  ) : (
-                    <Image source={FilmIconOutline} style={styles.image} />
-                  ),
-              }}
-            />
-          </Tab.Navigator>
-        ) : (
-          <View style={styles.container}>
-            <Text>Platform not supported</Text>
-          </View>
-        )
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarIcon: ({ focused }) =>
+                focused ? (
+                  <Image source={HomeIcon} style={styles.image} />
+                ) : (
+                  <Image source={HomeIconOutline} style={styles.image} />
+                ),
+            }}
+          />
+          <Tab.Screen
+            name="Latest Movies"
+            component={MovieList}
+            options={{
+              tabBarIcon: ({ focused }) =>
+                focused ? (
+                  <Image source={FilmIcon} style={styles.image} />
+                ) : (
+                  <Image source={FilmIconOutline} style={styles.image} />
+                ),
+            }}
+          />
+        </Tab.Navigator>
       ) : (
         <View style={styles.container}>
           <Text style={styles.message}>
@@ -188,4 +182,5 @@ function MovieList() {
     </View>
   );
 }
+
 
