@@ -1,4 +1,4 @@
-import * as React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import '@expo/metro-runtime';
 import { View, Text, Image, StyleSheet, Platform, ScrollView, Button, Animated } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -22,6 +22,7 @@ const connectedMap = {
   wifi: "Connected",
   cell: "Connected",
   mobile: "Connected",
+  other: "Connected",
 };
 
 export default function App() {
@@ -134,53 +135,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
-// Example of a screen component with ScrollView, Swipeable, and Modal
-function MovieList() {
-  const [movies, setMovies] = useState([]);
-  const [modalVisible, setModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState("");
-
-  useEffect(() => {
-    // Fetch movies from API
-    fetch("https://api.example.com/movies")
-      .then((response) => response.json())
-      .then((data) => setMovies(data))
-      .catch((error) => console.error(error));
-  }, []);
-
-  const handleSwipe = (item) => {
-    setSelectedItem(item.title);
-    setModalVisible(true);
-  };
-
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-        <SwipeListView
-          data={movies}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.item}>
-              <Text>{item.title}</Text>
-            </View>
-          )}
-          renderHiddenItem={({ item }) => (
-            <View style={styles.hiddenItem}>
-              <Button title="Show" onPress={() => handleSwipe(item)} />
-            </View>
-          )}
-          rightOpenValue={-75}
-        />
-      </ScrollView>
-      <Modal isVisible={modalVisible}>
-        <View style={styles.modalView}>
-          <Text style={styles.modalText}>{selectedItem}</Text>
-          <Button title="Close" onPress={() => setModalVisible(false)} />
-        </View>
-      </Modal>
-    </View>
-  );
-}
 
 

@@ -49,7 +49,7 @@ export default function APIList({ url }) {
 
   return (
     <FlatList
-      style={styles.movieList}
+      style={styles.movieListStyle}
       data={movies}
       renderItem={({ item }) => (
         <View style={[styles.movieItem, dynamicStyles().movieItem]}>
@@ -71,7 +71,7 @@ export default function APIList({ url }) {
 }
 
 const styles = StyleSheet.create({
-  movieList: {
+  movieListStyle: {
     backgroundColor: "ghostwhite",
   },
   movieItem: {
