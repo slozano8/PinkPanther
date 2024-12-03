@@ -18,7 +18,11 @@
     "@react-navigation/native": "^7.0.6",
     "axios": "^1.7.8",
     "expo": "^52.0.14",
+<<<<<<< HEAD
     "expo-status-bar": "^2.0.0",
+=======
+    "expo-status-bar": "~2.0.0",
+>>>>>>> be0c264340248ee7bd7cd911d6344cb4457e17c9
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "^0.76.3",

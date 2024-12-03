@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 // Example of a screen component with ScrollView, Swipeable, and Modal
 function MovieList1() {
   const [movies, setMovies] = useState([]);
@@ -184,4 +185,6 @@ function MovieList1() {
   );
 }
 
+=======
+>>>>>>> be0c264340248ee7bd7cd911d6344cb4457e17c9
 
