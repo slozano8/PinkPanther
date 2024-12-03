@@ -22,6 +22,7 @@ const connectedMap = {
   wifi: "Connected",
   cell: "Connected",
   mobile: "Connected",
+  other: "Connected",
 };
 
 export default function App() {
