@@ -1,4 +1,4 @@
-import * as React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import '@expo/metro-runtime';
 import { View, Text, Image, StyleSheet, Platform, ScrollView, Button, Animated } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -143,7 +143,7 @@ function MovieList() {
 
   useEffect(() => {
     // Fetch movies from API
-    fetch("https://api.example.com/movies")
+    fetch("https://image.tmdb.org/t/p/w500/${item.poster_path}")
       .then((response) => response.json())
       .then((data) => setMovies(data))
       .catch((error) => console.error(error));
