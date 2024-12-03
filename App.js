@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
 });
 
 // Example of a screen component with ScrollView, Swipeable, and Modal
-function MovieList() {
+function MovieList1() {
   const [movies, setMovies] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
