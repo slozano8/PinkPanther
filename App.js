@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import '@expo/metro-runtime';
-import { View, Text, Image, StyleSheet, Platform, ScrollView, Button, Animated } from "react-native";
+import "@expo/metro-runtime";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Platform,
+  ScrollView,
+  Button,
+  Animated,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NetInfo from "@react-native-community/netinfo";
@@ -135,5 +144,3 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
-
