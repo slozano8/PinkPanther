@@ -6,12 +6,9 @@ import {
   Image,
   StyleSheet,
   Platform,
-  ScrollView,
-  Button,
   Animated,
+  TextInput,
 } from "react-native";
-import '@expo/metro-runtime';
-import { View, Text, Image, StyleSheet, Platform, Animated, TextInput } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -37,12 +34,34 @@ const connectedMap = {
   other: "Connected",
 };
 
-function MovieStack() {
+function TabNavigator() {
   return (
-    <Stack.Navigator initialRouteName="MovieList">
-      <Stack.Screen name="MovieList" component={MovieList} options={{ headerShown: false }} />
-      <Stack.Screen name="MovieDetail" component={MovieDetail} options={{ title: 'Movie Details' }} />
-    </Stack.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image source={HomeIcon} style={styles.image} />
+            ) : (
+              <Image source={HomeIconOutline} style={styles.image} />
+            ),
+        }}
+      />
+      <Tab.Screen
+        name="Latest Movies"
+        component={MovieList}
+        options={{
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Image source={FilmIcon} style={styles.image} />
+            ) : (
+              <Image source={FilmIconOutline} style={styles.image} />
+            ),
+        }}
+      />
+    </Tab.Navigator>
   );
 }
 
@@ -69,32 +88,18 @@ export default function App() {
   return (
     <NavigationContainer>
       {connected === "Connected" ? (
-        <Tab.Navigator screenOptions={{ headerShown: false }}>
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarIcon: ({ focused }) =>
-                focused ? (
-                  <Image source={HomeIcon} style={styles.image} />
-                ) : (
-                  <Image source={HomeIconOutline} style={styles.image} />
-                ),
-            }}
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Tabs"
+            component={TabNavigator}
+            options={{ headerShown: false }}
           />
-          <Tab.Screen
-            name="Latest Movies"
-            component={MovieStack}
-            options={{
-              tabBarIcon: ({ focused }) =>
-                focused ? (
-                  <Image source={FilmIcon} style={styles.image} />
-                ) : (
-                  <Image source={FilmIconOutline} style={styles.image} />
-                ),
-            }}
+          <Stack.Screen
+            name="MovieDetail"
+            component={MovieDetail}
+            option={{ headerShown: false }}
           />
-        </Tab.Navigator>
+        </Stack.Navigator>
       ) : (
         <View style={styles.container}>
           <Text style={styles.message}>

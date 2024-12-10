@@ -22,9 +22,14 @@ export default function Home() {
         <Text style={styles.h1}>Pink Panther's Movie Pulse!</Text>
       </View>
       <View style={styles.bodyContainer}>
-        <Text style={styles.bodyText}>Welcome to Pink Panther Movie Pulse! Dive into the whimsical world of the Pink Panther 
-          and stay updated with the latest movie releases. Our platform offers a seamless experience for fans to watch classic Pink Panther films and discover new adventures. With regular updates on the newest movies, you'll never miss out on the latest in the Pink Panther series. 
-          Join us for a purr-fectly entertaining journey!</Text>
+        <Text style={styles.bodyText}>
+          Welcome to Pink Panther Movie Pulse! Dive into the whimsical world of
+          the Pink Panther and stay updated with the latest movie releases. Our
+          platform offers a seamless experience for fans to watch classic Pink
+          Panther films and discover new adventures. With regular updates on the
+          newest movies, you'll never miss out on the latest in the Pink Panther
+          series. Join us for a purr-fectly entertaining journey!
+        </Text>
       </View>
     </View>
   );
@@ -63,11 +68,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 20,
   },
-  bodyText: { 
-    fontSize: 24, 
-    color: "white", 
-    textAlign: "center", 
-    paddingHorizontal: 10, 
+  bodyText: {
+    fontSize: 24,
+    color: "white",
+    textAlign: "center",
+    paddingHorizontal: 10,
   },
   h1: {
     fontSize: 24,
@@ -87,4 +92,3 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
-

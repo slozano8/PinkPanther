@@ -1,14 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 
 export default function MovieDetail({ route }) {
-  const { movie } = route.params;
-
+  const movies = route.params;
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{movie.title}</Text>
-      <Text style={styles.detail}>Overview: {movie.overview}</Text>
-      <Text style={styles.detail}>Release Date: {movie.release_date}</Text>
-      <Text style={styles.detail}>Rating: {movie.vote_average}</Text>
+      <Text style={styles.title}>{movies.item.original_title}</Text>
+      <Text style={styles.detail}>Overview: {movies.item.overview}</Text>
+      <Text style={styles.detail}>
+        Release Date: {movies.item.release_date}
+      </Text>
+      <Text style={styles.detail}>Rating: {movies.item.vote_average}</Text>
     </View>
   );
 }
@@ -33,4 +34,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-

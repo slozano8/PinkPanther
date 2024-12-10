@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Image, TextInput, FlatList, TouchableOpacity, Platform, StatusBar } from "react-native";
-import APIList from "../components/api";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  FlatList,
+  TouchableOpacity,
+  Platform,
+  StatusBar,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const header_img = require("../assets/pinkPanther.png");
 
 export default function MovieList() {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const navigation = useNavigation();
 
   useEffect(() => {
     // Fetch movies from API
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=bc2fe3535276b345b0cc283587327106")
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=bc2fe3535276b345b0cc283587327106"
+    )
       .then((response) => response.json())
       .then((data) => setMovies(data.results))
       .catch((error) => console.error(error));
@@ -40,8 +53,16 @@ export default function MovieList() {
         data={filteredMovies}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.item}>
-            <Image source={{ uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}` }} style={styles.movieImage} />
+          <TouchableOpacity
+            style={styles.item}
+            onPress={() => navigation.navigate("MovieDetail", { item })} // Passes the data from the touchable opacity to the new page
+          >
+            <Image
+              source={{
+                uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}`,
+              }}
+              style={styles.movieImage}
+            />
             <View style={styles.itemContent}>
               <Text style={styles.itemTitle}>{item.title}</Text>
               <Text style={styles.itemDescription}>{item.overview}</Text>
@@ -131,5 +152,3 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
-
-
