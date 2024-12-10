@@ -1,0 +1,36 @@
+import { View, Text, StyleSheet } from "react-native";
+
+export default function MovieDetail({ route }) {
+  const { movie } = route.params;
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{movie.title}</Text>
+      <Text style={styles.detail}>Overview: {movie.overview}</Text>
+      <Text style={styles.detail}>Release Date: {movie.release_date}</Text>
+      <Text style={styles.detail}>Rating: {movie.vote_average}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "black",
+    padding: 20,
+    borderColor: "pink",
+    borderWidth: 1,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "pink",
+    marginBottom: 10,
+  },
+  detail: {
+    fontSize: 18,
+    color: "white",
+    marginBottom: 5,
+  },
+});
+

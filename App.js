@@ -10,13 +10,15 @@ import {
   Button,
   Animated,
 } from "react-native";
+import '@expo/metro-runtime';
+import { View, Text, Image, StyleSheet, Platform, Animated, TextInput } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import NetInfo from "@react-native-community/netinfo";
-import { SwipeListView } from "react-native-swipe-list-view";
-import Modal from "react-native-modal";
 import Home from "./pages/Home";
 import MovieList from "./pages/MovieList";
+import MovieDetail from "./pages/MovieDetail";
 
 const HomeIcon = require("./assets/house-icon.png");
 const HomeIconOutline = require("./assets/house-outline-icon.png");
@@ -24,6 +26,7 @@ const FilmIcon = require("./assets/film-icon.png");
 const FilmIconOutline = require("./assets/film-outline-icon.png");
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const connectedMap = {
   none: "Disconnected",
@@ -33,6 +36,15 @@ const connectedMap = {
   mobile: "Connected",
   other: "Connected",
 };
+
+function MovieStack() {
+  return (
+    <Stack.Navigator initialRouteName="MovieList">
+      <Stack.Screen name="MovieList" component={MovieList} options={{ headerShown: false }} />
+      <Stack.Screen name="MovieDetail" component={MovieDetail} options={{ title: 'Movie Details' }} />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   const [connected, setConnected] = useState("Checking network...");
@@ -72,7 +84,7 @@ export default function App() {
           />
           <Tab.Screen
             name="Latest Movies"
-            component={MovieList}
+            component={MovieStack}
             options={{
               tabBarIcon: ({ focused }) =>
                 focused ? (
@@ -110,37 +122,5 @@ const styles = StyleSheet.create({
     height: 24,
     width: 24,
     resizeMode: "contain",
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-    backgroundColor: "white",
-  },
-  hiddenItem: {
-    alignItems: "flex-end",
-    backgroundColor: "red",
-    flex: 1,
-    justifyContent: "center",
-    paddingRight: 15,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
   },
 });

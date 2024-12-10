@@ -19,10 +19,12 @@ export default function Home() {
           style={styles.headerImg}
           accessibilityHint="Pink Panther"
         />
-        <Text style={styles.h1}>Hello, from the home screen!</Text>
+        <Text style={styles.h1}>Pink Panther's Movie Pulse!</Text>
       </View>
       <View style={styles.bodyContainer}>
-        <Text>This is the body!</Text>
+        <Text style={styles.bodyText}>Welcome to Pink Panther Movie Pulse! Dive into the whimsical world of the Pink Panther 
+          and stay updated with the latest movie releases. Our platform offers a seamless experience for fans to watch classic Pink Panther films and discover new adventures. With regular updates on the newest movies, you'll never miss out on the latest in the Pink Panther series. 
+          Join us for a purr-fectly entertaining journey!</Text>
       </View>
     </View>
   );
@@ -33,6 +35,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "black",
+    borderColor: "pink",
+    borderWidth: 2,
     ...Platform.select({
       ios: { paddingTop: 55 },
       android: { paddingTop: StatusBar.currentHeight },
@@ -44,19 +49,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    backgroundColor: "#FFF",
+    backgroundColor: "black",
+    borderBottomColor: "pink",
+    borderBottomWidth: 2,
   },
   bodyContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     width: "98%",
-    backgroundColor: "#F9F9F9",
+    backgroundColor: "black",
+    borderColor: "pink",
+    borderWidth: 2,
+    padding: 20,
+  },
+  bodyText: { 
+    fontSize: 24, 
+    color: "white", 
+    textAlign: "center", 
+    paddingHorizontal: 10, 
   },
   h1: {
     fontSize: 24,
     fontFamily: "sans-serif",
-    fontWeight: "condensed",
+    fontWeight: "bold",
+    color: "pink",
     paddingVertical: 10,
   },
   headerImg: {
@@ -70,3 +87,4 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
+
